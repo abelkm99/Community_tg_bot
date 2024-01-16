@@ -107,7 +107,7 @@ if __name__ == '__main__':
         secret_token='ASecretTokenIHaveChangedByNow',
         key='private.key',
         cert='cert.pem',
-        webhook_url="https://<appname>.herokuapp.com/"
+        webhook_url="https://a2sv-community-tg-bot.onrender.com"
     )
     
     # application.run_polling(allowed_updates=Update.ALL_TYPES)
