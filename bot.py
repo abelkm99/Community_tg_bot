@@ -103,23 +103,8 @@ if __name__ == '__main__':
 
     application.run_webhook(
         listen="0.0.0.0",
-        port=PORT,
-        secret_token='ASecretTokenIHaveChangedByNow',
-        key='private.key',
-        cert='cert.pem',
-        webhook_url="https://a2sv-community-tg-bot.onrender.com"
+        port=8443,
+        webhook_url="https://41d5-197-156-86-205.ngrok-free.app"
     )
     
     # application.run_polling(allowed_updates=Update.ALL_TYPES)
-    
-#     application.run_webhook(
-#     listen='0.0.0.0',
-#     port=8443,
-#     secret_token='6607983770:AAH0ZPcVGzsw_Pk56ElVUcja4dVgtju6aXI',
-#     
-#     webhook_url='https://a2svcommunitybot:8443'
-# )
-    
-    
-
-   
