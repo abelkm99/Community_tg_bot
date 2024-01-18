@@ -88,11 +88,13 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token('6607983770:AAH0ZPcVGzsw_Pk56ElVUcja4dVgtju6aXI').build()
+    TOKEN = ""
+    PORT = int(os.environ.get('PORT', '8443'))
+
+    application = ApplicationBuilder().token(TOKEN).build()
     
 
-    TOKEN = "6607983770:AAH0ZPcVGzsw_Pk56ElVUcja4dVgtju6aXI"
-    PORT = int(os.environ.get('PORT', '8443'))
+    
     # add handlers
     
     start_handler = CommandHandler('start', start)
