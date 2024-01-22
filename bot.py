@@ -1,37 +1,55 @@
 import os
 import logging
 import texts
-from telegram import Update , InlineKeyboardButton, InlineKeyboardMarkup , constants
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
-
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, constants
+from telegram.ext import (
+    ApplicationBuilder,
+    ContextTypes,
+    CommandHandler,
+    CallbackQueryHandler,
+)
 
 
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 )
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = texts.text1
     keyboard = [
-        [[ InlineKeyboardButton("How Do I Join A2SV Community Education?", callback_data="2")]],
-        [[ InlineKeyboardButton("How Do I Join A2SV?", callback_data="1", url="https://t.me//CommunityTrial_bot?start")]]
+        [
+            [
+                InlineKeyboardButton(
+                    "How Do I Join A2SV Community Education?", callback_data="2"
+                )
+            ]
+        ],
+        [
+            [
+                InlineKeyboardButton(
+                    "How Do I Join A2SV?",
+                    callback_data="1",
+                    url="https://t.me//CommunityTrial_bot?start",
+                )
+            ]
+        ],
     ]
     reply_markup = InlineKeyboardMarkup(keyboard[0])
 
-    
     # await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('assets/a2sv.jpg', 'rb'))
-    
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=text, 
-                                   reply_markup=reply_markup, parse_mode = constants.ParseMode.HTML)
 
-    
-
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text=text,
+        reply_markup=reply_markup,
+        parse_mode=constants.ParseMode.HTML,
+    )
 
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    await query.answer() 
+    await query.answer()
     text1 = texts.text1
     text2 = texts.text2
     text3 = texts.text3
@@ -43,16 +61,30 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     discussion = texts.discussion
 
     keyboard = [
-       [ [ InlineKeyboardButton("How Do I Get Started?", callback_data="2")] ],
-       [ [ InlineKeyboardButton("Step 2", callback_data="3")] ],
-       [ [ InlineKeyboardButton("Step 3", callback_data="4")] ],
-       [ [ InlineKeyboardButton("Guide", callback_data="5")] ],
+        [[InlineKeyboardButton("How Do I Get Started?", callback_data="2")]],
+        [[InlineKeyboardButton("Step 2", callback_data="3")]],
+        [[InlineKeyboardButton("Step 3", callback_data="4")]],
+        [[InlineKeyboardButton("Guide", callback_data="5")]],
     ]
-    
-    keyboard2 = [[ InlineKeyboardButton("FAQs", callback_data="faq"), InlineKeyboardButton("Announcements", callback_data="announcement")],
-                 [ InlineKeyboardButton("Contests", callback_data="contest"), InlineKeyboardButton("Discussion", callback_data="discussion")],
-                 [ InlineKeyboardButton("Go Back To The Group", url= "https://t.me/A2SVDiscussion", callback_data="go_back_to_the_group")]]
-    
+
+    keyboard2 = [
+        [
+            InlineKeyboardButton("FAQs", callback_data="faq"),
+            InlineKeyboardButton("Announcements", callback_data="announcement"),
+        ],
+        [
+            InlineKeyboardButton("Contests", callback_data="contest"),
+            InlineKeyboardButton("Discussion", callback_data="discussion"),
+        ],
+        [
+            InlineKeyboardButton(
+                "Go Back To The Group",
+                url="https://t.me/A2SVDiscussion",
+                callback_data="go_back_to_the_group",
+            )
+        ],
+    ]
+
     reply_markup1 = InlineKeyboardMarkup(keyboard[0])
     reply_markup2 = InlineKeyboardMarkup(keyboard[1])
     reply_markup3 = InlineKeyboardMarkup(keyboard[2])
@@ -63,41 +95,71 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if query.data == "1":
         pass
         # await context.bot.send_message(chat_id=query.message.chat_id, text=text1, reply_markup=reply_markup1, parse_mode= constants.ParseMode.HTML)
-    elif query.data =="2":
-        await context.bot.sendMessage(chat_id=query.message.chat_id, text=text2, reply_markup=reply_markup2, parse_mode= constants.ParseMode.HTML)
-    elif query.data =="3":
-         await context.bot.sendMessage(chat_id=query.message.chat_id, text=text3, reply_markup=reply_markup3, parse_mode= constants.ParseMode.HTML)
-    elif query.data =="4":
-         await context.bot.sendMessage(chat_id=query.message.chat_id, text=text4, reply_markup=reply_markup5, parse_mode= constants.ParseMode.HTML)
-    elif query.data =="5":
-         await context.bot.sendMessage(chat_id=query.message.chat_id, text=text5, reply_markup=reply_markup5, parse_mode= constants.ParseMode.HTML)
+    elif query.data == "2":
+        await context.bot.sendMessage(
+            chat_id=query.message.chat_id,
+            text=text2,
+            reply_markup=reply_markup2,
+            parse_mode=constants.ParseMode.HTML,
+        )
+    elif query.data == "3":
+        await context.bot.sendMessage(
+            chat_id=query.message.chat_id,
+            text=text3,
+            reply_markup=reply_markup3,
+            parse_mode=constants.ParseMode.HTML,
+        )
+    elif query.data == "4":
+        await context.bot.sendMessage(
+            chat_id=query.message.chat_id,
+            text=text4,
+            reply_markup=reply_markup5,
+            parse_mode=constants.ParseMode.HTML,
+        )
+    elif query.data == "5":
+        await context.bot.sendMessage(
+            chat_id=query.message.chat_id,
+            text=text5,
+            reply_markup=reply_markup5,
+            parse_mode=constants.ParseMode.HTML,
+        )
     elif query.data == "faq":
-        await context.bot.sendMessage(chat_id=query.message.chat_id, text=faq, parse_mode= constants.ParseMode.HTML)
+        await context.bot.sendMessage(
+            chat_id=query.message.chat_id, text=faq, parse_mode=constants.ParseMode.HTML
+        )
 
     elif query.data == "announcement":
-        await context.bot.sendMessage(chat_id=query.message.chat_id, text=announcement,  parse_mode= constants.ParseMode.HTML)
-  
+        await context.bot.sendMessage(
+            chat_id=query.message.chat_id,
+            text=announcement,
+            parse_mode=constants.ParseMode.HTML,
+        )
+
     elif query.data == "contest":
-        await context.bot.sendMessage(chat_id=query.message.chat_id, text=contest,  parse_mode= constants.ParseMode.HTML)
-  
+        await context.bot.sendMessage(
+            chat_id=query.message.chat_id,
+            text=contest,
+            parse_mode=constants.ParseMode.HTML,
+        )
+
     elif query.data == "discussion":
-        await context.bot.sendMessage(chat_id=query.message.chat_id, text=discussion, parse_mode= constants.ParseMode.HTML)
-    
-    
+        await context.bot.sendMessage(
+            chat_id=query.message.chat_id,
+            text=discussion,
+            parse_mode=constants.ParseMode.HTML,
+        )
 
 
-
-if __name__ == '__main__':
-    TOKEN = ""
-    PORT = int(os.environ.get('PORT', '8443'))
+if __name__ == "__main__":
+    TOKEN = os.environ.get("BOT_TOKEN", "")
+    PORT = int(os.environ.get("PORT", "8000"))
+    WEBHOOK_URL = os.environ.get("WEBHOOK_URL", "")
 
     application = ApplicationBuilder().token(TOKEN).build()
-    
 
-    
     # add handlers
-    
-    start_handler = CommandHandler('start', start)
+
+    start_handler = CommandHandler("start", start)
     button_handler = CallbackQueryHandler(button)
 
     application.add_handler(start_handler)
@@ -105,8 +167,8 @@ if __name__ == '__main__':
 
     application.run_webhook(
         listen="0.0.0.0",
-        port=8443,
-        webhook_url="https://41d5-197-156-86-205.ngrok-free.app"
+        port=PORT,
+        webhook_url=WEBHOOK_URL,
     )
-    
+
     # application.run_polling(allowed_updates=Update.ALL_TYPES)
