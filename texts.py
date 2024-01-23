@@ -20,7 +20,7 @@ Begin your journey by completing our Community Education <a href="https://docs.g
     """
 text3 = """
     <b> Step 2: Complete your tailored learning path and participate in two consecutive A2SV community contests held every Saturday. </b> \n
-    A2SV Community Contests are programming competitions where you'll race against fellow contestants to solve as many problems as you possible can within a given timeframe. These contests are held remotely every Saturday from 6:00 PM to 8:00 PM.
+A2SV Community Contests are programming competitions where you'll race against fellow contestants to solve as many problems as you possible can within a given timeframe. These contests are held remotely every Saturday from 6:00 PM to 8:00 PM.
 
 To participate in these contests, you'll need to register on the <a href= "https://codeforces.com/"> Codeforces </a> platform and register for the upcoming contest using the provided link. Contest links are regularly shared in the group's <a href="https://t.me/A2SVDiscussion/10041"> contests topic.</a>
     """
