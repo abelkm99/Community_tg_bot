@@ -19,8 +19,8 @@ text2 = """
 Begin your journey by completing our Community Education <a href="https://docs.google.com/forms/d/e/1FAIpQLSfW6XLx9-olkKnmXkOZbYjBwo-R398nPaNyoV8qBwwkfmUJQw/viewform">Application Form</a>, a quick and easy process that will take just 1-3 minutes ⏰. We will automatically send you a tailored learning path.🎯
     """
 text3 = """
-    <b> Step 2: Complete your tailored learning path and participate in two consecutive A2SV community contests </b> held every Saturday.\n
-      A2SV Community Contests are programming competitions where you'll race against fellow contestants to solve as many problems as you possible can within a given timeframe. These contests are held remotely every Saturday from 6:00 PM to 8:00 PM.
+    <b> Step 2: Complete your tailored learning path and participate in two consecutive A2SV community contests </b> held every Saturday. \n
+    A2SV Community Contests are programming competitions where you'll race against fellow contestants to solve as many problems as you possible can within a given timeframe. These contests are held remotely every Saturday from 6:00 PM to 8:00 PM.
 
 To participate in these contests, you'll need to register on the <a href= "https://codeforces.com/"> Codeforces </a> platform and register for the upcoming contest using the provided link. Contest links are regularly shared in the group's <a href="https://t.me/A2SVDiscussion/10041"> contests topic.</a>
     """
