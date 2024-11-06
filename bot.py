@@ -16,15 +16,16 @@ logging.basicConfig(
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text = texts.text1
+    # text = texts.text1
+    text = texts.text
     keyboard = [
-        [
-            [
-                InlineKeyboardButton(
-                    "How Do I Join A2SV Community Education?", callback_data="2"
-                )
-            ]
-        ],
+        # [
+        #     [
+        #         InlineKeyboardButton(
+        #             "How Do I Join A2SV Community Education?", callback_data="2"
+        #         )
+        #     ]
+        # ],
         [
             [
                 InlineKeyboardButton(
