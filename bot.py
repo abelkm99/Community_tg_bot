@@ -30,7 +30,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 InlineKeyboardButton(
                     "How Do I Join A2SV?",
                     callback_data="1",
-                    url="https://t.me//CommunityTrial_bot?start",
+                    url="https://t.me/CommunityTrial_bot?start",
                 )
             ]
         ],
